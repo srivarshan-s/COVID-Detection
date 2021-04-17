@@ -1,0 +1,85 @@
+{% extends "covid/base.html" %} {% load static %} {% block content %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'covid/css/login.css' %}"
+/>
+
+<body>
+    <div>
+        <header class="header1">
+            <div class="text-center">
+                <br>
+                <div class="a">COVID DETECTION</div>
+            </div>
+        </header>
+    </div>
+    <div class="justify-content-center align-items-center">
+        <div class="container centre">
+            <div class="box bg2">
+                <div style="padding: 20px 20px;">
+                    <div class="text1 text-center">PLEASE ENTER YOUR CREDENTIALS</div>
+                    <br>
+                    <form name="loginForm" action="{% url 'covid:login' %}" method="POST" onsubmit="return validateLogin()">
+                        {% csrf_token %}
+                        <div class="text1">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Enter Username:
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="input1" name="username" value="{{ username }}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Enter Password:
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="password" class="input1" name="password" value="{{ password }}">
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="text-center">
+                            <button value="submit" type="submit" onclick="">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            LOGIN
+                                            <span></span><span></span><span></span><span></span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function validateLogin() {
+        username = document.forms["loginForm"]["username"].value;
+        password = document.forms["loginForm"]["password"].value;
+        if (username == null || username == "") {
+            alert("Username cannot be blank");
+            return false;
+        }
+        if (password == null || password == "") {
+            alert("Password cannot be blank");
+            return false;
+        }
+    }
+</script>
+
+{% for message in messages %}
+<script>
+    alert('{{ message }}');
+</script>
+{% endfor %}
+
+{% endblock content %}

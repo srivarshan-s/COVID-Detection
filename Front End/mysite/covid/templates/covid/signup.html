@@ -1,0 +1,102 @@
+{% extends "covid/base.html" %} {% load static %} {% block content %} 
+
+<link rel="stylesheet" href="{% static 'covid/css/signup.css' %}">
+
+<body>
+    <div>
+        <header class="header1">
+            <div class="text-center">
+                <br>
+                <div class="a">COVID DETECTION</div>
+            </div>
+        </header>
+    </div>
+    <div class="justify-content-center align-items-center">
+        <div class="container centre">
+            <div class="box bg2">
+                <div style="padding: 20px 20px;">
+                    <div class="text1 text-center">CREATE A NEW ACCOUNT</div>
+                    <br>
+                    <form name="signupForm" action="{% url 'covid:signup' %}" method="POST" onsubmit="return validateSignup()">
+                        {% csrf_token %}
+                        <div class="text1">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Enter Username:
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- <input type="text" class="input1" name="username"> -->
+                                    {{ form.username }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Enter Password:
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- <input type="password" class="input1" name="password1"> -->
+                                    {{ form.password1 }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Re-enter Password:
+                                </div>
+                                <div class="col-md-6" style="padding-top: 10px;">
+                                    <!-- <input type="password" class="input1" name="password2"> -->
+                                    {{ form.password2 }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Location:
+                                </div>
+                                <div class="col-md-6" style="padding-top: 10px;">
+                                    <!-- <input type="text" class="input1" name="place"> -->
+                                    {{ form.location }}
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="text-center">
+                            <button value="submit" type="submit">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            SUBMIT
+                                            <span></span><span></span><span></span><span></span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+{% for message in messages %}
+<script>
+    alert('{{ message }}');
+</script>
+{% endfor %}
+<script type="text/javascript">
+    function validateSignup() {
+        var username = document.forms["signupForm"]["username"].value;
+        var password1 = document.forms["signupForm"]["password1"].value;
+        var password2 = document.forms["signupForm"]["password2"].value;
+        if (username == null || username == "") {
+            alert("Username cannot be blank");
+            return false;
+        } else if (password1 == null || password1 == "") {
+            alert("Please enter valid password");
+            return false;
+        } else if (password1 != password2) {
+            alert("Passwords do not match");
+            return false;
+        }
+    }
+</script>
+
+{% endblock content %}
