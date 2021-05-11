@@ -1,0 +1,125 @@
+.text1 {
+    color: white;
+    font-size: 25px;
+}
+
+.header1 {
+    overflow: hidden;
+    color: white;
+    background-color: rgb(36, 56, 74);
+    padding: 10px 10px;
+    height: 150px;
+}
+
+div.a {
+    font-size: 60px;
+}
+
+.centre {
+    padding: 70px 0;
+}
+
+.button1 {
+    font-size: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+    color: rgb(36, 56, 74);
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 1920px 1080px;
+    overflow: hidden;
+    font-family: 'Titillium Web';
+}
+
+.bg2 {
+    background-color: rgb(36, 56, 74);
+    opacity: 0.80;
+}
+
+.box {
+    box-shadow: 5px 5px 2px;
+    border-radius: 10px;
+    padding: 50px;
+    width: 60%;
+    margin-left: 225px;
+}
+
+.right {
+    text-align: right;
+}
+
+.row {
+    padding: 7px 7px;
+}
+
+.input1 {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    --c: rgb(218, 222, 225);
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 2.5em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    background-color: rgb(36, 56, 74);
+    margin: -1em;
+}
+
+nav ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+nav ul li:hover {
+    color: rgb(36, 56, 74);
+}
+
+nav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+    --n: 4;
+}

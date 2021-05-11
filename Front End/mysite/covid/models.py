@@ -14,8 +14,19 @@ class UserProfile(models.Model):
 
 
 class UserImage(models.Model):
-	name = models.CharField(max_length=25)
-	image = models.ImageField(upload_to = 'covid/static/covid/userImage/')
+    name = models.CharField(max_length=25)
+    image = models.ImageField(upload_to="covid/static/covid/userImage/")
 
-	def __str__(self):
-		return self.name
+    def __str__(self):
+        return self.name
+
+
+class Doctor(models.Model):
+    name = models.CharField(max_length=25)
+    location = models.CharField(max_length=50)
+    xcoord = models.FloatField()
+    ycoord = models.FloatField()
+    fee = models.IntegerField()
+
+    def __str__(self):
+        return self.name

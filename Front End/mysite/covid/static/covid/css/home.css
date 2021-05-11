@@ -29,7 +29,7 @@ div.a {
 body {
   background-image: url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Simple-Minimalist-Background-Image.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 1920px 1080px;
   overflow: hidden;
   font-family: "Titillium Web";
 }
@@ -43,7 +43,6 @@ body {
   box-shadow: 5px 5px 2px;
   border-radius: 10px;
   padding: 50px;
-  margin-top: 100px;
   margin-left: 425px;
   width: 300px;
 }

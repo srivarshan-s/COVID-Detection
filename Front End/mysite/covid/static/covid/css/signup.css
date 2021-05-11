@@ -30,7 +30,7 @@
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: "Titillium Web";
   }
   
@@ -45,7 +45,7 @@
     padding: 50px;
     width: 50%;
     margin-left: 275px;
-    margin-top: 50px;
+    margin-top: -30px;
   }
   
   .right {
