@@ -21,6 +21,6 @@ def getYCoords(place):
 
 
 def getDistance(place1, place2):
-    place1Coords = getCoords(place1)
-    place2Coords = getCoords(place2)
+    place1Coords = (place1['xcoord'], place1['ycoord'])
+    place2Coords = (place2['xcoord'], place2['ycoord'])
     return hs.haversine(place1Coords, place2Coords)

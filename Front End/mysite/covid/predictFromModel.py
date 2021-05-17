@@ -2,6 +2,7 @@ from tensorflow.keras.models import model_from_json
 from tensorflow import keras
 import tensorflow as tf
 
+
 def load_model():
     global model
     # load json and create model

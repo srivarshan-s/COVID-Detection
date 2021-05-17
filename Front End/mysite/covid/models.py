@@ -8,6 +8,9 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     username = models.CharField(max_length=25)
     location = models.CharField(max_length=50)
+    xcoord = models.FloatField()
+    ycoord = models.FloatField()
+    fee = models.IntegerField()
 
     def __str__(self):
         return self.username

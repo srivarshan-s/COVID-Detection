@@ -1,0 +1,48 @@
+{% extends "covid/base.html" %} {% load static %} {% block content %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'covid/css/recommend.css' %}"
+/>
+
+<body>
+  <div>
+    <header class="header1">
+      <div class="text-center">
+        <br />
+        <div class="a">COVID DETECTION</div>
+      </div>
+    </header>
+  </div>
+  <div class="justify-content-center align-items-center">
+    <div class="container centre">
+      <div class="box bg2">
+        <div style="padding: 20px 20px">
+          <div class="text1 text-center">YOUR RECOMMENDED DOCTOR IS</div>
+          <br />
+          <div class="text1">
+            <table class="table table-hover align-middle">
+              <tr>
+                <td>NAME:</td>
+                <td>{{ nearestDoc.name }}</td>
+              </tr>
+              <tr>
+                <td>LOCATION:</td>
+                <td>{{ nearestDoc.location }}</td>
+              </tr>
+              <tr>
+                <td>FEE:</td>
+                <td>{{ nearestDoc.fee }}</td>
+              </tr>
+            </table>
+          </div>
+          <br />
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock content %}

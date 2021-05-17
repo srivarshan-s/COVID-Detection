@@ -36,7 +36,7 @@
                         </div>
                         <br>
                         <div class="text-center">
-                            <button value="submit" type="submit" onclick="">
+                            <button value="submit" type="submit" onclick="recommendRedirect()">
                                 <nav>
                                     <ul>
                                         <li>
@@ -52,5 +52,11 @@
         </div>
     </div>
 </body>
+
+<script>
+  function recommendRedirect() {
+    window.location.href = "{% url 'covid:recommend' %}";
+  }
+</script>
 
 {% endblock content %}

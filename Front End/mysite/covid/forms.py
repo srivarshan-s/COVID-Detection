@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from covid.models import Doctor
+# from covid.models import Doctor
 
 
 class UserForm(UserCreationForm):
@@ -23,7 +23,8 @@ class UserForm(UserCreationForm):
 
 class ImageForm(forms.Form):
     image = forms.ImageField(widget=forms.FileInput(
-        attrs={'class': 'fileinput'}), required=True)
+        attrs={'class': 'custom-file-input', 'id': 'inputGroupFile02'}),
+        required=True)
 
 
 class DoctorForm(forms.Form):

@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .predictFromModel import load_model, make_prediction
 from .getDist import getCoords
+from .aiRecommend import getNearestPlace, getUserPlace
+# from .binaryTree import aiRecommend
 
 # Create your views here.
 
@@ -41,13 +43,22 @@ def signup(request):
             user = authenticate(request, username=username, password=password)
             login(request, user)
             UserObject = User.objects.get(username=username)
+            coords = getCoords(location)
+            xcoord = coords[0]
+            ycoord = coords[1]
             UserProfileObject = UserProfile(
-                user=UserObject, username=UserObject.username, location=location
+                user=UserObject,
+                username=UserObject.username,
+                location=location,
+                xcoord=xcoord,
+                ycoord=ycoord,
+                fee=0,
             )
             UserProfileObject.save()
             return redirect("covid:upload")
         else:
-            messages.error(request, "Password failed security checks")
+            messages.error(request, form.errors)
+            print(form.errors)
     else:
         form = UserForm()
 
@@ -65,7 +76,10 @@ def upload(request):
                 ImageObject = UserImage.objects.get(name="image")
                 ImageObject.image = image
             else:
-                ImageObject = UserImage.objects.create(name="image", image=image)
+                ImageObject = UserImage.objects.create(
+                    name="image",
+                    image=image
+                )
             ImageObject.save()
             print(ImageObject)
             print("Image Uploaded")
@@ -91,6 +105,22 @@ def predict(request):
     return render(request, "covid/predict.html", context)
 
 
+@login_required(login_url="covid:login")
+def recommend(request):
+    current_user = request.user.username
+    userPlace = UserProfile.objects.get(username=current_user)
+    # nearestDoc = aiRecommend(userPlace)
+    # print(nearestDoc)
+    userPlace = userPlace.__dict__
+    getUserPlace(userPlace)
+    nearestDoc = getNearestPlace()
+    print(nearestDoc)
+    context = {
+        'nearestDoc': nearestDoc,
+    }
+    return render(request, "covid/recommend.html", context)
+
+
 def doctor(request):
     if request.method == "POST":
         form = DoctorForm(request.POST)
@@ -103,7 +133,11 @@ def doctor(request):
             xcoord = coords[0]
             ycoord = coords[1]
             DoctorObject = Doctor.objects.create(
-                name=name, location=location, xcoord=xcoord, ycoord=ycoord, fee=fee
+                name=name,
+                location=location,
+                xcoord=xcoord,
+                ycoord=ycoord,
+                fee=fee
             )
             DoctorObject.save()
             print(DoctorObject)
