@@ -2,32 +2,38 @@ doctor = [
     {
         'id': 1,
         'name': 'Doctor1',
-        'place': 'Chennai'
+        'place': 'Chennai',
+        'fee': 500
     },
     {
         'id': 2,
         'name': 'Doctor2',
-        'place': 'Mumbai'
+        'place': 'Mumbai',
+        'fee': 900
     },
     {
         'id': 3,
         'name': 'Doctor3',
-        'place': 'Bangalore'
+        'place': 'Bangalore',
+        'fee': 700
     },
     {
         'id': 4,
         'name': 'Doctor4',
-        'place': 'Delhi'
+        'place': 'Delhi',
+        'fee': 1100
     },
     {
         'id': 5,
         'name': 'Doctor5',
-        'place': 'Kolkata'
+        'place': 'Kolkata',
+        'fee': 800
     },
     {
         'id': 6,
         'name': 'Doctor6',
-        'place': 'Chennai'
+        'place': 'Chennai',
+        'fee': 400
     },
 ]
 

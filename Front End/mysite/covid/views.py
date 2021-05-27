@@ -17,6 +17,16 @@ def home(request):
     return render(request, "covid/home.html")
 
 
+@login_required(login_url="covid:login")
+def index(request):
+    return render(request, "covid/index.html")
+
+
+@login_required(login_url="covid:login")
+def support(request):
+    return render(request, "covid/support.html")
+
+
 def login_page(request):
     if request.method == "POST":
         username = request.POST.get("username")
@@ -24,7 +34,7 @@ def login_page(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("covid:upload")
+            return redirect("covid:index")
         else:
             messages.info(request, "Username or Password is incorrect")
             return redirect("covid:login")

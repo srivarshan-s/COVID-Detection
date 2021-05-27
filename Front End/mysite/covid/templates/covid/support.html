@@ -1,0 +1,172 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COVID SUPPORT</title>
+    <link rel="stylesheet" href="{% static 'covid/css/support.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+      integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+      integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class="he1">
+      <nav class="navbar navbar-toggleable-md navbar-inverse">
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'covid:index' %}">COVID</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a
+              class="nav-item nav-link"
+              href="https://www.cowin.gov.in/home"
+              target="_blank"
+              >COWIN</a
+            >
+            <a class="nav-item nav-link" href="{% url 'covid:upload' %}">COVID Testing</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="aboutCovid">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3">Symptoms of COVID?</h1>
+          <br>
+          <p class="lead">
+            COVID-19 affects different people in different ways. Most infected
+            people will develop mild to moderate illness and recover without
+            hospitalization. 
+            <br>
+            Most common symptoms:<br />
+            -Fever<br />
+            -Dry cough<br />
+            -Tiredness<br />
+            -Headache<br /><br />
+
+            Less common symptoms:<br />
+            -Aches and pains<br />
+            -Sore throat<br />
+            -Diarrhoea<br />
+            -Loss of taste or smell<br />
+            -A rash on skin, or discolouration of fingers or toes<br /><br />
+
+            Serious symptoms:<br />
+            -Difficulty breathing or shortness of breath<br />
+            -Chest pain or pressure<br />
+            -Loss of speech or movement<br /><br />
+
+            Seek immediate medical attention if you have serious symptoms.
+            Always call before visiting your doctor or health facility. People
+            with mild symptoms who are otherwise healthy should manage their
+            symptoms at home. On average it takes 5–6 days from when someone is
+            infected with the virus for symptoms to show, however it can take up
+            to 14 days.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="transmission">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3">Prevention of COVID</h1>
+          <br>
+          <p class="lead">
+            Protect yourself and others around you by knowing the facts and
+            taking appropriate precautions. Follow advice provided by your local
+            health authority.<br /><br>
+            To prevent the spread of COVID-19:<br />
+            -Clean your hands often. Use soap and water, or an alcohol-based
+            hand rub.<br />
+            -Maintain a safe distance from anyone who is coughing or
+            sneezing.<br />
+            -Wear a mask when physical distancing is not possible.<br />
+            -Don’t touch your eyes, nose or mouth.<br />
+            -Cover your nose and mouth with your bent elbow or a tissue when you
+            cough or sneeze.<br />
+            -Stay home if you feel unwell.<br />
+            -If you have a fever, cough and difficulty breathing, seek medical
+            attention.<br />
+            -Calling in advance allows your healthcare provider to quickly
+            direct you to the right health facility. <br>This protects you, and
+            prevents the spread of viruses and other infections.<br /><br>
+            Masks:<br />
+            Masks can help prevent the spread of the virus from the person
+            wearing the mask to others. Masks alone do not protect against
+            COVID-19, and should be combined with physical distancing and hand
+            hygiene. Follow the advice provided by your local health authority.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="mortality">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3">Easy Treatment for COVID</h1>
+          <br>
+          <p class="lead">
+            Self-care<br />
+            Asymptomatic cases, mild cases of COVID-19:<br />
+            -Isolate yourself in a well ventilated room.<br />
+            -Use a triple layer medical mask, discard mask after 8 hours of use
+            or earlier if they become wet or visibly soiled. In the event of a
+            caregiver entering the room, both caregiver and patient may consider
+            using N 95 mask.<br />
+            -Mask should be discarded only after disinfecting it with 1% Sodium
+            Hypochlorite.<br />
+            -Take rest and drink a lot of fluids to maintain adequate
+            hydration.<br />
+            -Follow respiratory etiquettes at all times.<br />
+            -Frequent hand washing with soap and water for at least 40 seconds
+            or clean with alcohol-based sanitizer.<br />
+            -Don’t share personal items with other people in the household.<br />
+            -Ensure cleaning of surfaces in the room that are touched often
+            (tabletops, doorknobs, handles, etc.) with 1% hypochlorite
+            solution.<br />
+            -Monitor temperature daily.<br />
+            -Monitor oxygen saturation with a pulse oximeter daily.<br />
+            -Connect with the treating physician promptly if any deterioration
+            of symptoms is noticed.<br /><br />
+            Instructions for caregivers:<br />
+            Mask: The caregiver should wear a triple layer medical mask. N95
+            mask may be considered when in the same room with the ill person.<br />
+            Hand hygiene: Hand hygiene must be ensured following contact with
+            ill person or patient’s immediate environment.<br /><br />
+            Exposure to patient/patient’s environment: Avoid direct contact with
+            body fluids of the patient, particularly oral or respiratory
+            secretions. Use disposable gloves while handling the patient.
+            Perform hand hygiene before and after removing gloves.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

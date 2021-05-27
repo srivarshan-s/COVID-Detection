@@ -43,12 +43,55 @@ def breadthFirstSearch(root):
             count = count - 1
 
 
+def sort(queue):
+    for i in range(len(queue)):
+        for j in range(len(queue) - i - 1):
+            hf1 = getDistance(userPlace, queue[j].data['place'])
+            hf1 += 0.1 * queue[j].data['fee']
+            hf2 = getDistance(userPlace, queue[j + 1].data['place'])
+            hf2 += 0.1 * queue[j + 1].data['fee']
+            if hf1 > hf2:
+                temp = queue[j]
+                queue[j] = queue[j + 1]
+                queue[j + 1] = temp
+
+
+def aStarSearch(root):
+    if root is None:
+        return
+    global nearestPlace
+    nearestPlace = root.data
+    nearestDist = getDistance(userPlace, nearestPlace['place'])
+    fee = nearestPlace['fee']
+    heuristicFunc = nearestDist + (0.1 * fee)
+    queue = []
+    queue.append(root)
+    while queue:
+        temp = queue.pop(0)
+        docPlace = temp.data['place']
+        tempDist = getDistance(userPlace, docPlace)
+        tempFee = temp.data['fee']
+        hf = tempDist + (0.1 * tempFee)
+        if hf == 0:
+            nearestPlace = temp.data
+            return
+        if hf < heuristicFunc:
+            nearestPlace = temp.data
+            heuristicFunc = hf
+        if temp.left:
+            queue.append(temp.left)
+        if temp.right:
+            queue.append(temp.right)
+        sort(queue)
+
+
 def main():
     # printData()
     convertIntoTree()
     # root.printTree()
     getUserPlace()
-    breadthFirstSearch(root)
+    # breadthFirstSearch(root)
+    aStarSearch(root)
     print(nearestPlace)
 
 

@@ -6,6 +6,8 @@ app_name = 'covid'
 
 urlpatterns = [
     path('home/', views.home, name='home'),
+    path('index/', views.index, name='index'),
+    path('support/', views.support, name='support'),
     path('login/', views.login_page, name='login'),
     path('signup/', views.signup, name='signup'),
     path('upload/', views.upload, name='upload'),

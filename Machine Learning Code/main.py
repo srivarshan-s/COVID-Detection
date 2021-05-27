@@ -16,6 +16,7 @@ def load_model():
 
 
 def print_result(array):
+    print(array)
     if array[0][0]:
         print('COVID')
     else:

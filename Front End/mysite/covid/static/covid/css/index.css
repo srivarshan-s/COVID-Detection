@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: rgb(36, 56, 74);
+}
+.jumbotron {
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: 1920px 1080px;
+  color: white;
+}
+nav {
+  background-color: rgb(36, 56, 74);
+}

@@ -27,7 +27,7 @@ div.a {
 }
 
 body {
-  background-image: url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Simple-Minimalist-Background-Image.jpg");
+  background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: 1920px 1080px;
   overflow: hidden;
