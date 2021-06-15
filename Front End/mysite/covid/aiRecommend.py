@@ -58,6 +58,7 @@ def aStarSearch(root):
         sort(queue)
 
 
+'''
 def breadthFirstSearch(root):
     if root is None:
         return
@@ -84,6 +85,7 @@ def breadthFirstSearch(root):
             if temp.right:
                 queue.append(temp.right)
             count = count - 1
+'''
 
 
 def getNearestPlace():

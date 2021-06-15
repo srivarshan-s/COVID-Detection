@@ -65,7 +65,7 @@ def signup(request):
                 fee=0,
             )
             UserProfileObject.save()
-            return redirect("covid:upload")
+            return redirect("covid:index")
         else:
             messages.error(request, form.errors)
             print(form.errors)
